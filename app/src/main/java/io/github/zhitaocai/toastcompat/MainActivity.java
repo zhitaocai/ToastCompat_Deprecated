@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 				ToastCompat.makeText(this, "show Multi Toast : one", Toast.LENGTH_SHORT).show();
 				ToastCompat.makeText(this, "show Multi Toast : two", Toast.LENGTH_SHORT).show();
 				ToastCompat.makeText(this, "show Multi Toast : three", Toast.LENGTH_SHORT).show();
+				//				Toast.makeText(this, "show Multi Toast : one", Toast.LENGTH_SHORT).show();
+				//				Toast.makeText(this, "show Multi Toast : two", Toast.LENGTH_SHORT).show();
+				//				Toast.makeText(this, "show Multi Toast : three", Toast.LENGTH_SHORT).show();
 				break;
 
 			case R.id.btn_show_toast_test:

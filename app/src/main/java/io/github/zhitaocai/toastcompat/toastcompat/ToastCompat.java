@@ -14,11 +14,11 @@ public class ToastCompat implements IToast {
 	private IToast mIToast;
 
 	public ToastCompat(Context context) {
-//		if (OSJudgementUtil.isMIUI()) {
+		if (OSJudgementUtil.isMIUI()) {
 			mIToast = new MIUIToastCompat(context);
-//		} else {
-//			mIToast = new SystemToast(context);
-//		}
+		} else {
+			mIToast = new SystemToast(context);
+		}
 	}
 
 	public static IToast makeText(Context context, String text, int duration) {
