@@ -19,21 +19,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.github.zhitaocai.toastcompat.util.DisplayUtil;
 
 /**
- * <pre>
- *      show() {
- *          1. 加入到队列
- *          2. 激活队列
- *              while(队列不空) {
- *                  1. 显示
- *                  2. 阻塞一段时间（显示时间的长度） 或者指定后续操作的执行时间点 (AtTime)
- *                  3. 消失(removeView)
- *                  4. 从队列中移除
- *              }
- *      }
- * </pre>
- * <p/>
- * PS: 你可能会注意到，下面写死了一些常量数字。作为一个Android党，你可能觉得这个写死一个数字会很难做兼容，但是下面用到的数字都不是瞎编的～
- *
  * @author zhitao
  * @since 2016-01-21 14:33
  */
@@ -173,10 +158,6 @@ public class MIUIToast implements IToast {
 
 	@Override
 	public void show() {
-
-		//		mHandler.post(mShow);
-		//		mHandler.postDelayed(mHide, mDurationMillis);
-
 		// 1. 将本次需要显示的toast加入到队列中
 		mQueue.offer(this);
 
@@ -189,9 +170,7 @@ public class MIUIToast implements IToast {
 
 	@Override
 	public void cancel() {
-		//		mHandler.post(mHide);
-
-		// 0. 如果队列已经处于非激活状态或者队列没有toast了，就表示队列没有toast正在展示了，直接return
+		// 1. 如果队列已经处于非激活状态或者队列没有toast了，就表示队列没有toast正在展示了，直接return
 		if (0 == mAtomicInteger.get() && mQueue.isEmpty()) {
 			return;
 		}
