@@ -1,9 +1,10 @@
 package io.github.zhitaocai.toastcompat.toastcompat;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 
-import io.github.zhitaocai.toastcompat.util.OSJudgementUtil;
+import io.github.zhitaocai.toastcompat.util.DisplayUtil;
 
 /**
  * @author zhitao
@@ -14,19 +15,20 @@ public class ToastCompat implements IToast {
 	private IToast mIToast;
 
 	public ToastCompat(Context context) {
-		if (OSJudgementUtil.isMIUI()) {
-			mIToast = new MIUIToastCompat(context);
-		} else {
-			mIToast = new SystemToast(context);
-		}
+		this(context, null, -1);
+	}
+
+	ToastCompat(Context context, String text, int duration) {
+//		if (OSJudgementUtil.isMIUI()) {
+			mIToast = new MIUIToast(context).setText(text).setDuration(duration)
+					.setGravity(Gravity.BOTTOM, 0, DisplayUtil.dip2px(context, 64));
+//		} else {
+//			mIToast = new SystemToast(context).setText(text).setDuration(duration);
+//		}
 	}
 
 	public static IToast makeText(Context context, String text, int duration) {
-		if (OSJudgementUtil.isMIUI()) {
-			return MIUIToastCompat.makeText(context, text, duration);
-		} else {
-			return SystemToast.makeText(context, text, duration);
-		}
+		return new ToastCompat(context, text, duration);
 	}
 
 	@Override
