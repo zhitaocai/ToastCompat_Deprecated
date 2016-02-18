@@ -5,6 +5,7 @@ import android.view.Gravity;
 import android.view.View;
 
 import io.github.zhitaocai.toastcompat.util.DisplayUtil;
+import io.github.zhitaocai.toastcompat.util.OSJudgementUtil;
 
 /**
  * @author zhitao
@@ -19,12 +20,12 @@ public class ToastCompat implements IToast {
 	}
 
 	ToastCompat(Context context, String text, int duration) {
-//		if (OSJudgementUtil.isMIUI()) {
+		if (OSJudgementUtil.isMIUI()) {
 			mIToast = new MIUIToast(context).setText(text).setDuration(duration)
 					.setGravity(Gravity.BOTTOM, 0, DisplayUtil.dip2px(context, 64));
-//		} else {
-//			mIToast = new SystemToast(context).setText(text).setDuration(duration);
-//		}
+		} else {
+			mIToast = new SystemToast(context).setText(text).setDuration(duration);
+		}
 	}
 
 	public static IToast makeText(Context context, String text, int duration) {
