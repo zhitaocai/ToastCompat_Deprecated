@@ -23,6 +23,7 @@ public final class OSJudgementUtil {
 	public static boolean isMIUI() {
 		try {
 			if (!mIsJudgementBefore) {
+				mIsJudgementBefore = true;
 				Properties properties = new Properties();
 				properties.load(new FileInputStream(new File(Environment.getRootDirectory(), "build.prop")));
 				mIsMIUIOS = properties.getProperty("ro.miui.ui.version.code", null) != null ||
