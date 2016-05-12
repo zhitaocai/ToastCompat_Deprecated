@@ -9,9 +9,9 @@ ext {
 	libraryVersionDesc = libDesc                                // 当前版本下的描述
 	repoTag = libraryVersionName                                // 当前版本下所对应的仓库的tag
 
-	publishedGroupId = 'io.github.zhitaocai.toastcompat'
-	libraryName = project.name                                  // 如果这样子写，必须要确保library的命名为可识别的，而不是命名为library
-	artifact = project.name                                     // 如果这样子写，必须要确保library的命名为可识别的，而不是命名为library
+	publishedGroupId = 'io.github.zhitaocai'    // 项目组ID(e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是io.github.zhitaocai)
+	artifact = project.name                     // 项目ID  (e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是toastcompat)
+	libraryName = project.name                  // 项目名字 一般和项目ID差不多吧，这里都是用project.name 所以project的名字就不要用library了
 
 	gitRepo = 'zhitaocai/ToastCompat'                           // 仓库短地址
 	siteUrl = 'https://github.com/zhitaocai/ToastCompat'

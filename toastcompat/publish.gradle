@@ -15,6 +15,9 @@ install {
 			project {
 				packaging 'aar'
 
+				// 如果包名为io.github.zhitaocai.toastcompat
+				// 那么groupId 为 io.github.zhitaocai
+				// 那么artifactId 为 toastcompat
 				groupId project.ext.publishedGroupId
 				artifactId project.ext.artifact
 
