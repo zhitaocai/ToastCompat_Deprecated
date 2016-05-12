@@ -1,17 +1,18 @@
 apply plugin: 'com.android.library'
 
 ext {
-	libraryVersionCode = 2
-	libraryVersionName = '0.1.1'
-	libraryVersionDesc = 'ToastCompat ' + libraryVersionName    // 当前版本下的描述
+	libraryVersionCode = 1
+	libraryVersionName = '0.1.0'
+	libDesc = 'A Compatible Toast to solve the problem that default system toast can\'t show on MIUI\'s OS when app running in ' +
+			'the background'
+//	libraryVersionDesc = 'ToastCompat ' + libraryVersionName    // 当前版本下的描述
+	libraryVersionDesc = libDesc                                // 当前版本下的描述
 	repoTag = libraryVersionName                                // 当前版本下所对应的仓库的tag
 
 	publishedGroupId = 'io.github.zhitaocai.toastcompat'
 	libraryName = project.name                                  // 如果这样子写，必须要确保library的命名为可识别的，而不是命名为library
 	artifact = project.name                                     // 如果这样子写，必须要确保library的命名为可识别的，而不是命名为library
 
-	libDesc = 'A Compatible Toast to solve the problem that default system toast can\'t show on MIUI\'s OS when app running in ' +
-			'the background'
 	gitRepo = 'zhitaocai/ToastCompat'                           // 仓库短地址
 	siteUrl = 'https://github.com/zhitaocai/ToastCompat'
 	gitUrl = 'https://github.com/zhitaocai/ToastCompat.git'
