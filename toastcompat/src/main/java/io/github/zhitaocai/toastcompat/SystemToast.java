@@ -40,9 +40,9 @@ public class SystemToast implements IToast {
 	/**
 	 * 不能和{@link #setText(String)}一起使用，要么{@link #setView(View)} 要么{@link #setView(View)}
 	 *
-	 * @param view
+	 * @param view 传入view
 	 *
-	 * @return
+	 * @return 自身对象
 	 */
 	@Override
 	public IToast setView(View view) {
@@ -59,9 +59,9 @@ public class SystemToast implements IToast {
 	/**
 	 * 不能和{@link #setView(View)}一起使用，要么{@link #setView(View)} 要么{@link #setView(View)}
 	 *
-	 * @param view
+	 * @param text 传入字符串
 	 *
-	 * @return
+	 * @return 自身对象
 	 */
 	@Override
 	public IToast setText(String text) {
