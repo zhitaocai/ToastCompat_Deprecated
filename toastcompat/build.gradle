@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 ext {
-	releaseNoteFile = 'ToastCompat/ChangeLog.md'// 仓库地址下，版本更新说明
+	releaseNoteFile = 'ChangeLog.md'            // 相对路径，填仓库下该文件地址即可
 	libraryName = 'ToastCompat'                 // bintray项目名字以及aar的名字，确定好了就不要在修改了
 
 	//compile 'publishedGroupId:artifact:libraryVersionName'
