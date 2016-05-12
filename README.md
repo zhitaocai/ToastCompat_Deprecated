@@ -3,7 +3,7 @@
 
 ## Usage
 
-1. 引入依赖库，目前项目已经上传到JCenter，因此只需要在你的项目Module中直接引入即可：
+1: 引入依赖库，目前项目已经上传到JCenter，因此只需要在你的项目Module中直接引入即可:
 
 ```gradle
     dependencies {
@@ -11,7 +11,7 @@
     }
 ```
 
-2. 调用方法
+2: 调用方法
 
 ```java
     ToastCompat.make(Context context, String text, long duration).show();
