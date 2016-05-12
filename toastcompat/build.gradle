@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+
+ext {
+	libraryVersionCode = 2
+	libraryVersionName = '0.1.1'
+	libraryVersionDesc = 'ToastCompat ' + libraryVersionName    // 当前版本下的描述
+	repoTag = libraryVersionName                                // 当前版本下所对应的仓库的tag
+
+	publishedGroupId = 'io.github.zhitaocai.toastcompat'
+	libraryName = project.name                                  // 如果这样子写，必须要确保library的命名为可识别的，而不是命名为library
+	artifact = project.name                                     // 如果这样子写，必须要确保library的命名为可识别的，而不是命名为library
+
+	libDesc = 'A Compatible Toast to solve the problem that default system toast can\'t show on MIUI\'s OS when app running in ' +
+			'the background'
+	gitRepo = 'zhitaocai/ToastCompat'                           // 仓库短地址
+	siteUrl = 'https://github.com/zhitaocai/ToastCompat'
+	gitUrl = 'https://github.com/zhitaocai/ToastCompat.git'
+	issueUrl = 'https://github.com/zhitaocai/ToastCompat/issues'
+}
+
+//ext {
+//	// 使用默认的
+//	bintrayRepo = 'maven'
+//	bintrayName = 'toastcompat'
+//
+//	publishedGroupId = 'io.github.zhitaocai.toastcompat'
+//	libraryName = 'ToastCompat'
+//	artifact = 'toastcompat'
+//
+//	libraryDescription = 'A Compatible Toast to solve the problem that default system toast can\'t show on MIUI\'s OS when app running in the background'
+//
+//	siteUrl = 'https://github.com/zhitaocai/ToastCompat'
+//	gitUrl = 'git@github.com:zhitaocai/ToastCompat.git'
+//
+//	libraryVersion = '0.1.0'
+//
+//	developerId = 'zhitaocai'
+//	developerName = 'Zhitao Cai'
+//	developerEmail = 'czt.saisam@gmail.com'
+//
+//	licenseName = 'The Apache Software License, Version 2.0'
+//	licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//	allLicenses = ["Apache-2.0"]
+//}
+
+android {
+	compileSdkVersion 23
+	buildToolsVersion "23.0.2"
+
+	defaultConfig {
+		minSdkVersion 14
+		targetSdkVersion 23
+		versionCode libraryVersionCode
+		versionName libraryVersionName
+		// versionName libraryVersion
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+}
+
+dependencies {
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+	testCompile 'junit:junit:4.12'
+}
+
+apply from: 'publish.gradle'
+//apply from: 'install.gradle'
+//apply from: 'release.gradle'

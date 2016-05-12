@@ -1,4 +1,4 @@
-package io.github.zhitaocai.toastcompat.toastcompat;
+package io.github.zhitaocai.toastcompat;
 
 import android.view.View;
 

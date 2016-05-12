@@ -1,4 +1,4 @@
-package io.github.zhitaocai.toastcompat;
+package io.github.zhitaocai.toastcompat.demo;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import io.github.zhitaocai.toastcompat.toastcompat.IToast;
-import io.github.zhitaocai.toastcompat.toastcompat.ToastCompat;
+import io.github.zhitaocai.toastcompat.IToast;
+import io.github.zhitaocai.toastcompat.ToastCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
