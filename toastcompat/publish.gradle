@@ -111,7 +111,7 @@ bintray {
 			desc = project.ext.libraryVersionDesc
 
 			// 发布日期
-			released = new Date().format('yyyy-MM-dd HH:mm:ss')
+			released = new Date().format('yyyy-MM-dd\'T\'HH:mm:ss.SSSZZ')
 
 			// Version control tag name 应该是对应类库的tag
 			vcsTag = project.ext.repoTag
