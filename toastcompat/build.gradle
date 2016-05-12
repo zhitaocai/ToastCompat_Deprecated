@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 ext {
-	libraryVersionCode = 1
-	libraryVersionName = '0.1.0'
+	libraryVersionCode = 2
+	libraryVersionName = '0.1.1'
 	libraryVersionDesc = 'ToastCompat ' + libraryVersionName    // 当前版本下的描述
 	repoTag = libraryVersionName                                // 当前版本下所对应的仓库的tag
 
