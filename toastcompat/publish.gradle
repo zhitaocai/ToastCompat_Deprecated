@@ -9,6 +9,10 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+// Maven Group ID for the artifact
+group = project.ext.publishedGroupId
+version = project.ext.libraryVersionName
+
 install {
 	repositories.mavenInstaller {
 		pom {
@@ -95,7 +99,7 @@ bintray {
 		githubRepo = project.ext.gitRepo
 
 		// (可选参数)仓库地址下的README.md
-		githubReleaseNotesFile = 'README.md'
+		githubReleaseNotesFile = project.ext.releaseNoteFile
 
 		// (可选参数)package-level attributes 暂时不是很懂意思和用法
 		// attributes = ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee']
@@ -120,7 +124,7 @@ bintray {
 			vcsTag = project.ext.repoTag
 
 			// Attributes to be attached to the version(还不是很懂这个参数使用)
-			attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+			// attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
 
 //			//Optional version-level attributes
 //			//Optional configuration for GPG signing
@@ -160,4 +164,15 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 artifacts {
 	archives javadocJar
 	archives sourcesJar
+}
+
+javadoc {
+	options{
+		encoding "UTF-8"
+		charSet 'UTF-8'
+		author true
+		version project.ext.libraryVersionName
+		links "http://docs.oracle.com/javase/7/docs/api"
+		title project.name
+	}
 }

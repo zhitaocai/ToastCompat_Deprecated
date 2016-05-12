@@ -1,18 +1,20 @@
 apply plugin: 'com.android.library'
 
 ext {
-	libraryVersionCode = 1
-	libraryVersionName = '0.1.0'
-	libDesc = 'A Compatible Toast to solve the problem that default system toast can\'t show on MIUI\'s OS when app running in ' +
-			'the background'
-//	libraryVersionDesc = 'ToastCompat ' + libraryVersionName    // 当前版本下的描述
-	libraryVersionDesc = libDesc                                // 当前版本下的描述
-	repoTag = libraryVersionName                                // 当前版本下所对应的仓库的tag
+	releaseNoteFile = 'ToastCompat/ChangeLog.md'// 仓库地址下，版本更新说明
+	libraryName = 'ToastCompat'                 // bintray项目名字以及aar的名字，确定好了就不要在修改了
+
+	//compile 'publishedGroupId:artifact:libraryVersionName'
 
 	publishedGroupId = 'io.github.zhitaocai'    // 项目组ID(e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是io.github.zhitaocai)
-	artifact = project.name                     // 项目ID  (e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是toastcompat)
-	libraryName = project.name                  // 项目名字 一般和项目ID差不多吧，这里都是用project.name 所以project的名字就不要用library了
+	artifact = 'toastcompat'                    // 项目ID  (e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是toastcompat)
+	libraryVersionName = '0.1.0'                // 对应的versionname
 
+	libraryVersionCode = 1
+	libDesc = 'A Compatible Toast to solve the problem that default system toast can\'t show on MIUI\'s OS when app running in ' +
+			'the background'                                    // 项目描述
+	libraryVersionDesc = libDesc                                // 当前版本下的项目描述
+	repoTag = libraryVersionName                                // 当前版本下所对应的仓库的tag
 	gitRepo = 'zhitaocai/ToastCompat'                           // 仓库短地址
 	siteUrl = 'https://github.com/zhitaocai/ToastCompat'
 	gitUrl = 'https://github.com/zhitaocai/ToastCompat.git'
