@@ -24,6 +24,10 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 	compile 'com.android.support:appcompat-v7:23.1.1'
 	compile 'com.android.support:design:23.1.1'
+
+	// 引用本项目中的library
 	compile project(':toastcompat')
-//	compile 'io.github.zhitaocai.toastcompat:toastcompat:0.1.0'
+
+	// 引用jcenter上的aar
+	// compile 'io.github.zhitaocai:toastcompat:0.1.0'
 }
