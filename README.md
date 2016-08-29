@@ -1,5 +1,17 @@
 # 兼容小米MIUI系统的Toast
 
+## 重要
+
+新IUI系统（Android 6.0.1 MMB29M MIUI 8 6.8.18 | 开发版）上，这个库还需要声明悬浮窗的权限才能使用
+
+```xml
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+```
+
+对的，仅需要在AndroidMainfest.xml中进行声明就可以，不需要引导用户打开权限。
+
+**考虑到后来MIUI系统已经修复了这个问题，因此感觉这个库已经不太需要了**
+
 
 ## Usage
 
